@@ -36,9 +36,11 @@ export function TopBar({
     <header className="sticky top-0 z-30 border-b-2 border-border bg-card/95 backdrop-blur">
       <div className="mx-auto flex max-w-5xl items-center gap-3 px-4 py-3">
         <Link to="/" className="flex items-center gap-2">
-          <span className="grid h-9 w-9 place-items-center rounded-xl bg-primary text-lg shadow-[0_3px_0_0_var(--primary-shadow)]">
-            🦉
-          </span>
+          <img
+            src="/lingolumo-logo.png"
+            alt="Lingolumo"
+            className="h-10 w-10 rounded-full object-cover"
+          />
           <span className="hidden text-xl font-extrabold tracking-tight text-primary sm:block">
             Lingolumo
           </span>
