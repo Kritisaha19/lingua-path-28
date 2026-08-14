@@ -24,6 +24,7 @@ app = FastAPI(title="Duolingo Clone API")
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
+        "https://lingua-path-28-delta.vercel.app",
         "http://localhost:3000",
         "http://localhost:3001",
         "http://localhost:3002",
