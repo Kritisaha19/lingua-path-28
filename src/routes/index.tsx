@@ -1,24 +1,32 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { AppShell, useProgressQuery } from "@/components/layout/AppShell";
+import { LearningPath } from "@/components/learning/LearningPath";
 
-// No head() here: the home route inherits title/description/og/twitter from
-// __root.tsx, and ships no og:image so serve-time hosting can inject the
-// project's social preview (explicit og:image or latest screenshot).
 export const Route = createFileRoute("/")({
+  head: () => ({
+    meta: [
+      { title: "Lingolumo — Learn Spanish with bite-sized lessons" },
+      {
+        name: "description",
+        content:
+          "Follow a playful skill tree, earn XP, keep your streak and master Spanish one short lesson at a time.",
+      },
+      { property: "og:title", content: "Lingolumo — Learn Spanish daily" },
+      {
+        property: "og:description",
+        content:
+          "A Duolingo-style learning path with hearts, XP, gems and daily goals.",
+      },
+    ],
+  }),
   component: Index,
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
 function Index() {
+  const progress = useProgressQuery();
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
-    </div>
+    <AppShell>
+      <LearningPath progress={progress.data ?? null} />
+    </AppShell>
   );
 }
