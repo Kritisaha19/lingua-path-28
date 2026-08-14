@@ -154,5 +154,28 @@
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
+    font-family:
+      "Nunito",
+      ui-rounded,
+      "Segoe UI",
+      system-ui,
+      sans-serif;
   }
+}
+
+@utility btn-3d {
+  border-radius: 1rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  transition:
+    transform 120ms ease,
+    box-shadow 120ms ease,
+    filter 120ms ease;
+}
+
+@utility card-soft {
+  background-color: var(--card);
+  border: 2px solid var(--border);
+  border-radius: 1.25rem;
 }
