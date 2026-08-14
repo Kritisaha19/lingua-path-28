@@ -77,16 +77,27 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { title: "Lingolumo — Playful language learning" },
+      {
+        name: "description",
+        content:
+          "Lingolumo is a bite-sized language learning app with a skill tree, hearts, XP and daily goals.",
+      },
+      { property: "og:title", content: "Lingolumo — Playful language learning" },
+      {
+        property: "og:description",
+        content: "Learn Spanish with short lessons, streaks, XP and gems.",
+      },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:site", content: "@Lovable" },
     ],
     links: [
+      { rel: "preconnect", href: "https://fonts.googleapis.com" },
+      {
+        rel: "stylesheet",
+        href: "https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap",
+      },
       {
         rel: "stylesheet",
         href: appCss,
